@@ -21,6 +21,7 @@ class Common(Configuration):
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
+        'graphene_django',           # graphql
 
         # Your apps
         'space.users',
@@ -199,4 +200,8 @@ class Common(Configuration):
             'rest_framework.authentication.SessionAuthentication',
             'rest_framework.authentication.TokenAuthentication',
         )
+    }
+
+    GRAPHENE = {
+        "SCHEMA": "space.workers.schema.schema"
     }
