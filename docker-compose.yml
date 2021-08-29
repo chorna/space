@@ -17,11 +17,10 @@ services:
       - "8000:8000"
     depends_on:
       - postgres
-  documentation:
+  nginx:
     restart: always
-    build: ./
-    command: "mkdocs serve"
-    volumes:
-      - ./:/code
+    build: ./nginx
     ports:
-      - "8001:8001"
+      - 1337:80
+    depends_on:
+      - web
